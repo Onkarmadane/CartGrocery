@@ -1,0 +1,43 @@
+.navbar-custom {
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.navbar-custom .navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-custom .search-bar {
+    width: 100%;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+.navbar-custom  {
+    font-size: 24px;
+    color: red;
+}
+
+.navbar-toggler-icon {
+    font-size: 12px !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: red !important;
+}
+.input-group-text {
+    background-color: transparent; /* Make the background transparent */
+    border-right: none;  /* Remove the border between icon and input */
+  }
+  
+  .form-control {
+    border-left: none;  /* Remove left border of the input field */
+  }
+  @media only screen and (max-width: 600px) {
+    .navbar-toggler,.navbar-toggler-icon{
+        display: none !important;
+    }
+  }
+
+  body{
+    overflow-x:hidden !important;
+  }

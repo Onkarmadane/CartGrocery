@@ -1,0 +1,14 @@
+/* .product-card img {
+    background-color: #F36B2D;
+} */
+
+.product-card .discount-badge {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.hr{
+    border-bottom: #F36B2D 5px solid !important;
+    border-width: 50% !important;
+    width: 50%;
+}
