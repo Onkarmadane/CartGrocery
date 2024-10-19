@@ -1,0 +1,28 @@
+.btnBg, .icon {
+  background: linear-gradient(90deg, rgba(243, 107, 45, 1) 0%, rgba(253, 50, 50, 1) 100%);
+  outline: none !important;
+  border: none !important;
+  transition:  0.25s ease-in-out; /* Add transition for background */
+}
+
+.btnBg:hover, .icon:hover {
+  background: linear-gradient(90deg, rgba(253, 50, 50, 1) 0%, rgba(243, 107, 45, 1) 100%);
+  outline: none !important;
+  border: none !important;
+}
+
+.DeskFormImg {
+  display: block !important;
+}
+.MobFormImg{
+  display: none !important;
+  }
+@media (max-width: 768px) {
+  .MobFormImg{
+    display: block !important;
+  }
+  .DeskFormImg {
+    display: none !important; /* Show the logo on mobile */
+  }
+}
+

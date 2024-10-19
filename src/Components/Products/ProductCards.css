@@ -12,3 +12,27 @@
     border-width: 50% !important;
     width: 50%;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Mobile screens */
+
+.card-body{
+    margin-top: 10px !important;
+}
+@media (max-width: 500px) {
+    .card {
+        width: 10rem !important;
+        height: 270px !important;
+        margin-top: 0 !important;
+    }
+}
+
+/* Tablets and above */
+@media (min-width: 768px) {
+    .card {
+        width: 12rem !important; /* Standard card width */
+    }
+}

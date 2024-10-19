@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.08bf52af.css",
+    "main.js": "/static/js/main.0a608f40.js",
+    "static/js/453.a6bb5ef0.chunk.js": "/static/js/453.a6bb5ef0.chunk.js",
+    "static/media/Your paragraph text (1).png": "/static/media/Your paragraph text (1).8317b0ea64e73b56d698.png",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/Potato.svg": "/static/media/Potato.bf660933fa08c38d4585022cddeff36a.svg",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/dawat.png": "/static/media/dawat.08a5514e760d60971dfb.png",
+    "static/media/tetley.png": "/static/media/tetley.df3c9eb103c332379763.png",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/LadyFinger.svg": "/static/media/LadyFinger.7e3363dca2585c4609ef8a8b16cc25ed.svg",
+    "static/media/GreenChilli.svg": "/static/media/GreenChilli.18fbb0e797d6050d583a07e397994ff2.svg",
+    "static/media/tomato.svg": "/static/media/tomato.a96d3a00a581b3f99cb1329295749f17.svg",
+    "static/media/ColddrinksJuices.svg": "/static/media/ColddrinksJuices.efe9e798061063e17c40f488df5193ef.svg",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/BathBody.svg": "/static/media/BathBody.3709cd4a00f3a2ac41be75b7434ca103.svg",
+    "static/media/eggMeatFish.svg": "/static/media/eggMeatFish.f8ecc93c1dfc59bc814f24591d524b7d.svg",
+    "static/media/fruitsVegs.svg": "/static/media/fruitsVegs.1b5f6065c8068c2552cbb13342eed23e.svg",
+    "static/media/Icecream.svg": "/static/media/Icecream.622f7a412e7ddad541c758293e8908f5.svg",
+    "static/media/Onion.png": "/static/media/Onion.458c763ad65ab292bad4.png",
+    "static/media/Snacks.svg": "/static/media/Snacks.4dadd7255231dde2181225aa3dacaf92.svg",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/DairyBreakfast.svg": "/static/media/DairyBreakfast.cde68138866ad707ddf51807e8dbf782.svg",
+    "static/media/deal1.png": "/static/media/deal1.90ea071effb57839766b.png",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "index.html": "/index.html",
+    "static/media/wired-outline-185-trash-bin-hover-empty.svg": "/static/media/wired-outline-185-trash-bin-hover-empty.9f56eafe0b1125c651a9851ebb0d96c0.svg",
+    "main.08bf52af.css.map": "/static/css/main.08bf52af.css.map",
+    "main.0a608f40.js.map": "/static/js/main.0a608f40.js.map",
+    "453.a6bb5ef0.chunk.js.map": "/static/js/453.a6bb5ef0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08bf52af.css",
+    "static/js/main.0a608f40.js"
+  ]
+}

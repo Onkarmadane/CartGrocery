@@ -2,8 +2,9 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay'; // Import autoplay styles
 import './Card.css';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import FVImg from '../../img/fruitsVegs.svg';
 import DairyImg from '../../img/DairyBreakfast.svg';
 import EggMeatImg from '../../img/eggMeatFish.svg';
@@ -15,52 +16,65 @@ import IcecreamImg from '../../img/Icecream.svg';
 const Card = () => {
     // Array holding the dynamic data for each card
     const cardData = [
-        { imgPath: FVImg, title: 'Fruits & Vegetables',color:'rgba(243, 107, 45, 0.2)' },
-        { imgPath: DairyImg, title: 'Dairy & Breakfast', color:'rgba(248, 54, 54, 0.2)'},
-        { imgPath: EggMeatImg, title: 'Egg, Meat & Fish',color:'rgba(243, 107, 45, 0.2)' },
-        { imgPath: BathBodyImg, title: 'Bath & Body', color:'rgba(248, 54, 54, 0.2)' },
-        { imgPath: ColdDrinksJuicesImg, title: 'Cold Drinks & Juices',color:'rgba(243, 107, 45, 0.2)' },
-        { imgPath: IcecreamImg, title: 'Ice Cream', color:'rgba(248, 54, 54, 0.2)' },
-        { imgPath: SnacksImg, title: 'Snacks' ,color:'rgba(243, 107, 45, 0.2)'},
+        { imgPath: FVImg, title: 'Fruits & Vegetables' },
+        { imgPath: DairyImg, title: 'Dairy & Breakfast' },
+        { imgPath: EggMeatImg, title: 'Egg, Meat & Fish' },
+        { imgPath: BathBodyImg, title: 'Bath & Body'},
+        { imgPath: ColdDrinksJuicesImg, title: 'Cold Drinks & Juices',},
+        { imgPath: IcecreamImg, title: 'Ice Cream'},
+        { imgPath: SnacksImg, title: 'Snacks' },
     ];
 
     return (
-        <div>
-            <h1 className=' mx-5 text-start mt-2 heading'>Shop From <span style={{ color: '#F36B2D' }}>Top Categories</span></h1>
-            <hr style={{ color: '#F36B2D', borderBottom: '2px #F36B2D solid' }} className='w-50' />
+        <div className='px-2 mx-2  shadow-sm border border-1 rounded mt-2'>
+            
+            <h4 className=' text-start mt-3  heading' style={{padding:'0'}}>Shop From <span style={{ color: '#F36B2D' }}>Top Categories</span></h4>
+            <hr style={{ color: '#F36B2D', borderBottom: '2px #F36B2D solid' }} className='w-25' />
+            
             <Swiper
-                spaceBetween={1}
+                spaceBetween={2}
                 pagination={{
                     clickable: true,
+                    el: '.swiper-pagination-1',
+                }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
                 }}
                 breakpoints={{
-                    370: {
-                        slidesPerView: 2,  // 3 slides for mobile view
-                    },
-                    640: {
-                        slidesPerView: 4,  // 4 slides for larger mobile screens
-                    },
-                    768: {
-                        slidesPerView: 4,  // 4 slides for tablet screens
-                    },
-                    1024: {
-                        slidesPerView: 5,  // 5 slides for larger screens
-                    },
+                    360: { slidesPerView: 2 },
+                    640: { slidesPerView: 3 },
+                    768: { slidesPerView: 3 },
+                    1024: { slidesPerView: 6 },
                 }}
-                modules={[Pagination]}
-                className="mySwiper"
+                modules={[Pagination, Autoplay]}
+                className="mySwiper swiper1 m-0 p-0"
             >
                 {cardData.map((card, index) => (
                     <SwiperSlide key={index}>
-                        <div className="card m-2 rounded-md mx-auto my-3" style={{width:"200px",height:'250px',backgroundColor:card.color}}>
-                            <div className="card-body d-flex justify-content-center">
-                                <img src={card.imgPath} className="card-img-top w-75 mx-auto" alt={card.title} />
+                        
+                        <div className="rounded mx-auto border border-1 bg-light Category-Card" style={{  backgroundColor: card.color, height:'100px',width:'100px'}}>
+                            <div className="card-body ">
+                            <img 
+                                src={card.imgPath} 
+                                className="card-img-top p-4 CategoryImg" 
+                                alt={card.title} 
+                                style={{ 
+                                    height: '100px',  // Fix height
+                                    objectFit: 'contain',  // Ensures image fits without distortion
+                                    borderRadius: '10px 10px 0 0' 
+                                }} 
+                            />
                             </div>
-                            <p className="card-text  p-3">{card.title}</p>
                         </div>
+                            <p className="card-text text-center mt-1">{card.title}</p>
+                    
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div className="swiper-pagination-1 m-0 p-0"></div>
+
+
         </div>
     );
 }

@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  .DetailsContainer {
+    flex-wrap: wrap !important;
+  }
+
+  #btnico {
+    display: block !important;
+  }
+
+  #lordIco {
+    display: none !important;
+  }
+}
+
+#btnico {
+  display: none !important;
+}
