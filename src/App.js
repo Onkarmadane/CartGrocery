@@ -14,6 +14,7 @@ import CreateHotel from './Components/CreateHotel/CreateHotel';
 import UpdateHotel from './Components/UpdateHotel/UpdateHotel';
 import Profile from './Components/Profile/Profile';
 import CryptoJS from 'crypto-js'
+import Hotels from './Components/Hotels';
 
 function App() {
  
@@ -41,6 +42,8 @@ function App() {
           <Route path="/UpdateHotel/:id" element={<UpdateHotel />} />
           <Route path="/hotel/:id" element={<HotelDetails />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/Hotels" element={<Hotels />} />
+          
         </Routes>
       </Router>
     </div>
