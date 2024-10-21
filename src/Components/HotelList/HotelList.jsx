@@ -24,6 +24,7 @@ const HotelList = () => {
   const [hotelToUpdate, setHotelToUpdate] = useState(null); // Store the hotel to update
   const [updatedHotel, setUpdatedHotel] = useState({}); // State for updated hotel details
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
   // 
@@ -47,7 +48,12 @@ const HotelList = () => {
 
   const fetchItems = async () => {
     const token = localStorage.getItem('token');
-    setAuthToken(token);
+    if (token) {
+      setAuthToken(token);
+      setIsLoggedIn(true); // Set the login state to true if a token is present
+    } else {
+      setIsLoggedIn(false);
+    }
 
     try {
       const response = await api.get('https://hoteltest-six.vercel.app/hotel/?action=getHotel');
@@ -66,20 +72,6 @@ const HotelList = () => {
   useEffect(() => {
     fetchItems();
   }, []);
-
-  // useEffect(async () => {
-  //   const response = await axios.get('https://hoteltest-six.vercel.app/hotel/?action=getHotel');
-
-  //   setHotelData(response.data)
-  // }, [])
-  // const LastPostIndex = currentPage * postPerPage;
-  // const FirstPostIndex = LastPostIndex - postPerPage;
-  // const currentPost = hotelData.slice(FirstPostIndex, LastPostIndex)
-
-  // Handle page change
-  //  const handlePageChange = (selectedPage) => {
-  //   setCurrentPage(selectedPage.selected);
-  // };
 
   if (loading) {
     return (
@@ -100,12 +92,14 @@ const HotelList = () => {
       <h2 className="text-center mt-5">Hotel List</h2>
       <hr className='w-50 mx-auto' />
 
-      <div className="d-flex justify-content-end align-items-center m-3 mx-5">
-        <Button variant="primary" type="submit" className="mx-3  btnBg rounded p-2" onClick={handleCreateHotelClick}>
-          Create Hotel
-        </Button>
-        <p className="border border-danger p-2 m-0 rounded">Total Hotels: {totalHotels}</p> {/* Updated class for styling */}
-      </div>
+      {isLoggedIn && ( // Conditionally render the buttons based on login state
+        <div className="d-flex justify-content-end align-items-center m-3 mx-5">
+          <Button variant="primary" type="submit" className="mx-3 btnBg rounded p-2" onClick={handleCreateHotelClick}>
+            Create Hotel
+          </Button>
+          <p className="border border-danger p-2 m-0 rounded">Total Hotels: {totalHotels}</p>
+        </div>
+      )}
 
 
       {/* Hotel Cards */}

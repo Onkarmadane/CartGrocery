@@ -16,7 +16,7 @@ const Hotels = () => {
                 setAuthToken(token);
 
                 const response = await api.get(`https://hoteltest-six.vercel.app/hotel/?action=getHotel&page=${currentPage}&records_number=${rowsPerPage}`);
-                
+
                 console.log("API Response:", response.data);
                 const data = response.data.data; // Check if this path is correct
                 setItems(data);
@@ -45,7 +45,7 @@ const Hotels = () => {
         <div>
             {/* Loading Indicator */}
             {loading && <div className="loading">Loading hotels...</div>}
-            
+
             {/* Hotel Cards */}
             <div className="hotel-list-container d-flex flex-wrap justify-content-center m-3">
                 {items.length > 0 ? (
@@ -74,39 +74,39 @@ const Hotels = () => {
             {/* Hotel Cards Ends */}
 
             <div className="pagination d-flex justify-content-center">
-    <nav>
-        <ul className="pagination">
-            <li className="page-item">
-                <button 
-                    className="page-link" 
-                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} 
-                    disabled={currentPage === 1}
-                >
-                    Prev
-                </button>
-            </li>
-            {Array.from({ length: totalPages }, (_, index) => (
-                <li className={`page-item ${currentPage === index + 1 ? 'active' : ''}`} key={index}>
-                    <button 
-                        className="page-link" 
-                        onClick={() => setCurrentPage(index + 1)}
-                    >
-                        {index + 1}
-                    </button>
-                </li>
-            ))}
-            <li className="page-item">
-                <button 
-                    className="page-link" 
-                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} 
-                    disabled={currentPage === totalPages}
-                >
-                    Next
-                </button>
-            </li>
-        </ul>
-    </nav>
-</div>
+                <nav>
+                    <ul className="pagination">
+                        <li className="page-item">
+                            <button
+                                className="page-link"
+                                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                                disabled={currentPage === 1}
+                            >
+                                Prev
+                            </button>
+                        </li>
+                        {Array.from({ length: totalPages }, (_, index) => (
+                            <li className={`page-item ${currentPage === index + 1 ? 'active' : ''}`} key={index}>
+                                <button
+                                    className="page-link"
+                                    onClick={() => setCurrentPage(index + 1)}
+                                >
+                                    {index + 1}
+                                </button>
+                            </li>
+                        ))}
+                        <li className="page-item">
+                            <button
+                                className="page-link"
+                                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                                disabled={currentPage === totalPages}
+                            >
+                                Next
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
         </div>
     );
