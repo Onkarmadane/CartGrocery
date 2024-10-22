@@ -4,6 +4,8 @@ import './Login.css';
 import Logo from '../../img/Logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import api, { setAuthToken } from '../../helpers/apiService';
+// import '../../img/Cart.gif'
+import loader from '../../img/Cart.gif'
 
 const Login = () => {
     const [phone, setPhone] = useState('');
@@ -77,9 +79,10 @@ const Login = () => {
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center vh-100">
-                <div className="spinner-grow" role="status">
+                <img src={loader} alt="" loading='Lazy'/>
+                {/* <div className="spinner-grow" role="status">
                     <span className="visually-hidden">Loading...</span>
-                </div>
+                </div> */}
             </div>
         );
     }

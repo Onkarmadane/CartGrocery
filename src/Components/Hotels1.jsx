@@ -5,6 +5,7 @@ import { Modal, Button } from 'react-bootstrap';
 import Nav from './Nav/Nav';
 import MobileNav from './MobileNav/MobileNav';
 import Footer from './Footer/Footer';
+import loader from '../../src/img/Cart.gif'
 
 const Hotels1 = () => {
     const [items, setItems] = useState([]);
@@ -55,9 +56,11 @@ const Hotels1 = () => {
     if (loading) {
         return (
             <div className="d-flex justify-content-center align-items-center vh-100">
-                <div className="spinner-grow" role="status">
+                <img src={loader} alt="" loading='Lazy'/>
+                
+                {/* <div className="spinner-grow" role="status">
                     <span className="visually-hidden">Loading...</span>
-                </div>
+                </div> */}
             </div>
         );
     }

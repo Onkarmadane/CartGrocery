@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 import Button from '../Button/Button'
 import './HotelDetails.css'
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
+import loader from '../../img/Cart.gif'
 
 const HotelDetails = () => {
   const { id } = useParams(); // Get hotel ID from URL
@@ -93,9 +94,11 @@ const HotelDetails = () => {
   if (loading) {
     return (
       <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="spinner-grow" role="status">
+        <img src={loader} alt="" loading='Lazy' />
+
+        {/* <div className="spinner-grow" role="status">
           <span className="visually-hidden">Loading...</span>
-        </div>
+        </div> */}
       </div>
     );
   }
