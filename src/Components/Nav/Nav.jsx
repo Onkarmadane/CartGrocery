@@ -7,6 +7,7 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import NotFound from '../NotFound/NotFound';
 import HotelListPage from '../../Pages/HotelListPage';
 const Nav = () => {
+  
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary Desktop">
       <div className="container-fluid">
@@ -32,12 +33,12 @@ const Nav = () => {
         <form className="d-flex">
           <div className="input-group" style={{ borderRadius: '25px' }}>
             <span className="input-group-text bg-white border-0" id="search-icon">
-            <lord-icon
-    src="https://cdn.lordicon.com/wjyqkiew.json"
-    trigger="hover"
-    colors="primary:#000000,secondary:#000000"
-    style={{width:'25px',height:'25px'}}>
-</lord-icon>
+              <lord-icon
+                src="https://cdn.lordicon.com/wjyqkiew.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#000000"
+                style={{ width: '25px', height: '25px' }}>
+              </lord-icon>
               <input
                 className="form-control border-0 rounded-lg"
                 type="search"
@@ -49,7 +50,7 @@ const Nav = () => {
           </div>
         </form>
 
-       
+
         {/* Offcanvas for Links */}
         <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div className="offcanvas-header">
@@ -62,10 +63,11 @@ const Nav = () => {
                 <Link className="nav-link active" aria-current="page" to="/Home">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/HotelListPage">Hotels</Link>
+                <Link className='nav-link {isActive ? "active" : ""}' to="/HotelListPage">Hotels</Link>
+                {/* {isActive ? "active" : ""} */}
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/notfound">Pricing</Link>
+                <Link className="nav-link" to="/Dashboard">Charts</Link>
               </li>
               <li className="nav-item dropdown">
                 <Link
@@ -86,12 +88,12 @@ const Nav = () => {
             </ul>
           </div>
         </div>
-       {/* Wishlist Icon */}
-       <Link to="# " className='mx-1'>
+        {/* Wishlist Icon */}
+        <Link to="# " className='mx-1'>
           <FontAwesomeIcon icon={faHeart} className="px-1" color="#F83636" />
         </Link>
         <Link to="#" className='mx-3'>
-        <i class="fa fa-right-from-bracket " style={{color:"#F83636"}}></i>
+          <i class="fa fa-right-from-bracket " style={{ color: "#F83636" }}></i>
         </Link>
       </div>
 

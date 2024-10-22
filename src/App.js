@@ -14,8 +14,12 @@ import CreateHotel from './Components/CreateHotel/CreateHotel';
 import UpdateHotel from './Components/UpdateHotel/UpdateHotel';
 import Profile from './Components/Profile/Profile';
 import CryptoJS from 'crypto-js'
-import Hotels from './Components/Hotels';
-import Hotels1 from './Components/Hotels1'; 
+// import Hotels from './Components/Hotels';
+import Hotels1 from './Components/Hotels1';
+import Dashboard from './Components/Dashboard' 
+import Dashboards from '@highcharts/dashboards';
+import Highcharts from 'highcharts';
+
 
 function App() {
  
@@ -45,6 +49,7 @@ function App() {
           <Route path="/Profile" element={<Profile />} />
           {/* <Route path="/Hotels" element={<Hotels />} /> */}
           <Route path="/Hotels1" element={<Hotels1 />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
           
         </Routes>
       </Router>

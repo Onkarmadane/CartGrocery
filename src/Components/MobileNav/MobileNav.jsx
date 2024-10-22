@@ -11,9 +11,9 @@ function MobileNav() {
           <i className="fa fa-home"></i>
           <p>Home</p>
         </Link>
-        <Link to="/notfound" className="nav-link text-center">
-          <i className="fa fa-shopping-cart"></i>
-          <p>Cart</p>
+        <Link to="/Dashboard" className="nav-link text-center">
+          <i className="fa fa-dashboard"></i>
+          <p>Charts</p>
         </Link>
         <Link to="/HotelListPage" className="nav-link text-center">
           <i className="fa fa-list"></i>
