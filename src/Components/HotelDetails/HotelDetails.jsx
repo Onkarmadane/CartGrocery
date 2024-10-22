@@ -111,7 +111,7 @@ const HotelDetails = () => {
     <>
       <Nav />
       <MobileNav />
-      <div className="container mb-5 d-flex justify-content-center align-items-center DetailsContainer">
+      <div className="container mb-5 d-flex justify-content-center align-items-center DetailsContainer mt-2">
   <div className="col-12 col-md-6 mt-2"> {/* Adjusted for responsive behavior */}
     <img
       src={hotel.profile_image}
@@ -120,8 +120,8 @@ const HotelDetails = () => {
       style={{ width: '100%', height: 'auto' }}
     />
   </div>
-  <div className="col-12 col-md-6 m-2 p-2"> {/* Adjusted for responsive behavior */}
-    <div className="row">
+  <div className="col-12 col-md-6 p-2"> {/* Adjusted for responsive behavior */}
+    <div className="row m-0 p-0">
       <div className="col-12 col-sm-6"> {/* Stack on mobile, side by side on larger screens */}
         <p className='m-1'><strong>Address:</strong> {hotel.address}</p>
         <p className='m-1'><strong>Name:</strong> {hotel.name}</p>
