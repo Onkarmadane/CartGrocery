@@ -10,8 +10,15 @@
   #lordIco {
     display: none !important;
   }
+.buttons{
+margin: 0 !important;
 }
 
+}
 #btnico {
   display: none !important;
+}
+.buttons{
+  /* margin: auto !important; */
+  /* margin-left: 90px !important; */
 }
