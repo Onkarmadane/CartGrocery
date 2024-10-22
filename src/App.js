@@ -43,7 +43,7 @@ function App() {
           <Route path="/UpdateHotel/:id" element={<UpdateHotel />} />
           <Route path="/hotel/:id" element={<HotelDetails />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Hotels" element={<Hotels />} />
+          {/* <Route path="/Hotels" element={<Hotels />} /> */}
           <Route path="/Hotels1" element={<Hotels1 />} />
           
         </Routes>
