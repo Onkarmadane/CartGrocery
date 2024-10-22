@@ -7,6 +7,7 @@ import MobileNav from '../MobileNav/MobileNav';
 import Footer from '../Footer/Footer';
 import Button from '../Button/Button'
 import './HotelDetails.css'
+import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 
 const HotelDetails = () => {
   const { id } = useParams(); // Get hotel ID from URL
@@ -26,8 +27,12 @@ const HotelDetails = () => {
     navigate(`/UpdateHotel/${id}`); // Navigate to the Update Hotel page with the hotel ID
   };
 
-
-
+// to add tooltop for website
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      {hotel.website_link}
+    </Tooltip>
+  );
 
   // Function to delete a hotel
   const deleteHotel = async (id) => {
@@ -107,73 +112,73 @@ const HotelDetails = () => {
       <Nav />
       <MobileNav />
       <div className="container mb-5 d-flex justify-content-center align-items-center DetailsContainer">
-        <div className="col-6 mt-2">
-          <img
-            src={hotel.profile_image}
-            alt={`${hotel.name} profile`}
-            className="img-fluid rounded"
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </div>
-        <div className="col-6 m-2 p-2 ">
-          <div className="col-3">
-            <p className='m-1'><strong>Address:</strong> {hotel.address}</p>
-            <p className='m-1'><strong>Name:</strong> {hotel.name}</p>
-            <p className='m-1'><strong>City:</strong> {hotel.city}</p>
-            <p className='m-1'><strong>State:</strong> {hotel.state}</p>
-          </div>
-          <div className="col-3">
-            <p className='m-1'><strong>Country:</strong> {hotel.country}</p>
-            <p className='m-1'><strong>Pincode:</strong> {hotel.pincode}</p>
-            <p className='m-1'><strong>Phone:</strong> {hotel.phone}</p>
-            <p className='m-1'>
-              <strong>Website:</strong>
-              <a href={hotel.website_link} target="_blank" rel="noopener noreferrer">
-                {hotel.website_link}
-              </a>
-            </p></div>
-          <div className="mt-3">
-          <div className='d-flex'>
-            <button class="button BtnBg" onClick={() => handleUpdateClick(hotel.id)}>
-                
-            <div className="icon-container">
-      <div id="lordIco">
-      <lord-icon
-        src="https://cdn.lordicon.com/exymduqj.json"
-        trigger="hover"
-        state="hover-line"
-        colors="primary:#ffffff,secondary:#ffffff"
-      />
+  <div className="col-12 col-md-6 mt-2"> {/* Adjusted for responsive behavior */}
+    <img
+      src={hotel.profile_image}
+      alt={`${hotel.name} profile`}
+      className="img-fluid rounded"
+      style={{ width: '100%', height: 'auto' }}
+    />
+  </div>
+  <div className="col-12 col-md-6 m-2 p-2"> {/* Adjusted for responsive behavior */}
+    <div className="row">
+      <div className="col-12 col-sm-6"> {/* Stack on mobile, side by side on larger screens */}
+        <p className='m-1'><strong>Address:</strong> {hotel.address}</p>
+        <p className='m-1'><strong>Name:</strong> {hotel.name}</p>
+        <p className='m-1'><strong>City:</strong> {hotel.city}</p>
+        <p className='m-1'><strong>State:</strong> {hotel.state}</p>
+      </div>
+      <div className="col-12 col-sm-6"> {/* Stack on mobile, side by side on larger screens */}
+        <p className='m-1'><strong>Country:</strong> {hotel.country}</p>
+        <p className='m-1'><strong>Pincode:</strong> {hotel.pincode}</p>
+        <p className='m-1'><strong>Phone:</strong> {hotel.phone}</p>
+        <p className='m-1'>
+      <strong>Website: </strong>
+      <OverlayTrigger placement="top" overlay={renderTooltip}>
+        <a
+          href={hotel.website_link}
+          className='text-wrap w-25'
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {hotel.name}
+          {/* Visit Website */}
+        </a>
+      </OverlayTrigger>
+    </p>
       </div>
     </div>
-              <div id='btnico'><i className='fa fa-pen'></i> </div> Update
-            </button>
-
-            <button className='button1 BtnBg mx-2' onClick={() => handleDeleteClick(id)}>
-                <div id="lordIco">
-                <lord-icon
-                    src="https://cdn.lordicon.com/hwjcdycb.json"
-                    trigger="hover"
-                    colors="primary:#000,secondary:#000"
-                    style={{ width: '30px', height: '30px' }}>
-                </lord-icon>
-                </div>
-                <div id='btnico'><i className='fa fa-trash'></i> </div>
-                Delete
-            </button>
-
-        </div>
-
-            {/* <button className="btn btn-warning" onClick={() => handleUpdateClick(hotel.id)}>
-              Update
-            </button>
-            <button className="btn btn-danger" onClick={() => handleDeleteClick(hotel.id)}>
-              Delete
-            </button> */}
+    <div className="mt-3">
+      <div className='d-flex'>
+        <button className="button BtnBg" onClick={() => handleUpdateClick(hotel.id)}>
+          <div className="icon-container">
+            <div id="lordIco">
+              <lord-icon
+                src="https://cdn.lordicon.com/exymduqj.json"
+                trigger="hover"
+                state="hover-line"
+                colors="primary:#ffffff,secondary:#ffffff"
+              />
+            </div>
           </div>
+          <div id='btnico'><i className='fa fa-pen'></i> </div> Update
+        </button>
 
-        </div>
+        <button className='button1 BtnBg mx-2' onClick={() => handleDeleteClick(id)}>
+          <div id="lordIco">
+            <lord-icon
+              src="https://cdn.lordicon.com/hwjcdycb.json"
+              trigger="hover"
+              colors="primary:#000,secondary:#000"
+              style={{ width: '30px', height: '30px' }}>
+            </lord-icon>
+          </div>
+          <div id='btnico'><i className='fa fa-trash'></i> </div> Delete
+        </button>
       </div>
+    </div>
+  </div>
+</div>
 
 
       <Footer />
